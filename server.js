@@ -6,7 +6,7 @@
 // });
 
 
-   /* == Express Modules == */
+/* == Express Modules == */
 const express = require ("express")
 
 /* == Internal Modules == */
@@ -19,7 +19,7 @@ const app = express()
 const PORT = 3000
 
 /* == DB connection == */
-// require('./config/db.connection');
+require('./config/db.connection');
 
 /* == Middleware == */
 
@@ -58,6 +58,6 @@ app.use("/bhaijis", routes.bhaijis)
 
 
 app.listen(PORT, () => {
-   console.log(`Celibration happing on port`, PORT)
+   console.log('🎉🎊', 'celebrations happening on port', PORT, '🎉🎊',)
 });
 
