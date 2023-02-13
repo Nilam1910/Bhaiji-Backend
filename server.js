@@ -32,7 +32,7 @@ app.use(express.urlencoded({extended: true}))
 // const methodOverride  = require('method-override')
 
 /* == Routes == */
-app.use("/bhaijis", routes.bhaijis)
+app.use("/products", routes.products)
 // app.use("/users", routes.users)
 
 /* == Bcrypt == */

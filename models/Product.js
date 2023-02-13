@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const bhaijiSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
    imgURL: { type: String, required: false},
 	name: { type: String, required: true },
    information: { type: String, required: false },
@@ -10,6 +10,6 @@ const bhaijiSchema = new mongoose.Schema({
    {timestamps: true }
 );
 
-const Bhaiji = mongoose.model("Bhaiji", bhaijiSchema)
+const Product = mongoose.model("Product", productSchema)
 
-module.exports = Bhaiji;
+module.exports = Product;

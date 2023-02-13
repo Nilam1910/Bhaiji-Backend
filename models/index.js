@@ -1,3 +1,3 @@
 module.exports = {
-   Bhaiji: require("./Bhaiji.js")
+   Product: require("./Product.js")
 }

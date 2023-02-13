@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectionStr = process.env.MONGODB_URI || 'mongodb://localhost:27017/holidaysDB';
+const connectionStr = process.env.MONGODB_URI || 'mongodb://localhost:27017/productsDB';
 
 // set up connection with the DB
 mongoose.connect( connectionStr);
