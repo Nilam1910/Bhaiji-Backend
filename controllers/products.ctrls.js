@@ -1,4 +1,5 @@
    
+const { Product } = require("../models");
 const db = require("../models")
 
 // get all the products
@@ -23,8 +24,34 @@ const create = (req,res)=> {
       return res.status(200).json(createdProduct); //  .json() will send proper headers in response so client knows it's json coming back
     });
 }
+
+// destroy single product by its ID   or delete product
+const destroy = (req,res) => {
+   db.Product.findByIdAndDelete(req.params.id, (error, deletedProduct)=>{
+      if(error) return res.status(400).json({ error: error.message });
+
+      return res.status(200).json({
+         message: `Product ${deletedProduct.name} deleted successfully`
+       });
+   });
+}
+
+// update single product by its id
+const update = (req,res) => {
+   db.Product.findByIdAndUpdate(req.params.id, 
+      {
+            $set: req.body
+      },
+      {  new: true },
+      (error, updatedProduct) => {
+         if(error) return res.status(400).json({ error: error.message });
+         return res.status(200).json(updatedProduct)
+      });   
+   }
+
 module.exports = {
    index,
    create,
-   // destroy,
+   destroy,
+   update,
 } 
